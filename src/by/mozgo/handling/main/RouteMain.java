@@ -1,7 +1,6 @@
 package by.mozgo.handling.main;
 
 import by.mozgo.handling.builder.RouteBuilder;
-import by.mozgo.handling.entity.Bus;
 import by.mozgo.handling.reader.RouteReader;
 import by.mozgo.handling.singleton.PassengersCount;
 import by.mozgo.handling.singleton.TimeTable;

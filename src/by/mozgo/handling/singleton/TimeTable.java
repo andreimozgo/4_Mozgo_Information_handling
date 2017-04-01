@@ -1,7 +1,5 @@
 package by.mozgo.handling.singleton;
 
-import by.mozgo.handling.entity.Route;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.locks.ReentrantLock;

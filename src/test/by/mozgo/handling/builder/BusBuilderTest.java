@@ -1,9 +1,6 @@
 package test.by.mozgo.handling.builder;
 
 import by.mozgo.handling.builder.RouteBuilder;
-import by.mozgo.handling.entity.BusStop;
-import by.mozgo.handling.entity.BusStopName;
-import by.mozgo.handling.entity.Route;
 import by.mozgo.handling.singleton.TimeTable;
 import org.junit.Assert;
 import org.junit.Test;

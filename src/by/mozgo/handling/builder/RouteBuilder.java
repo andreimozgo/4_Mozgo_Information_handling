@@ -1,8 +1,5 @@
 package by.mozgo.handling.builder;
 
-import by.mozgo.handling.entity.BusStop;
-import by.mozgo.handling.entity.BusStopName;
-import by.mozgo.handling.entity.Route;
 import by.mozgo.handling.singleton.TimeTable;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
