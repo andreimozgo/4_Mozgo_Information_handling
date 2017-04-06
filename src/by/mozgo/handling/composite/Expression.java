@@ -1,4 +1,4 @@
-package by.mozgo.handling.entity;
+package by.mozgo.handling.composite;
 
 /**
  * @author Andrei Mozgo
