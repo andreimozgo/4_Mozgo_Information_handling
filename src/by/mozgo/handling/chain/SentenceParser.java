@@ -1,7 +1,6 @@
 package by.mozgo.handling.chain;
 
 import by.mozgo.handling.composite.Paragraph;
-import by.mozgo.handling.composite.Sentence;
 import by.mozgo.handling.composite.TextComponent;
 
 import java.util.ArrayList;
@@ -14,24 +13,20 @@ import java.util.regex.Pattern;
  */
 public class SentenceParser implements TextParser {
     private final String SENTENCE_DELIMETER = "(?s)[\\p{Upper}+\\-(](.(?!\\.))*..";
+    private TextParser nextParser = new LexemeParser();
 
     @Override
     public TextComponent parseText(String text) {
-
         Matcher sentenceMatcher = Pattern.compile(SENTENCE_DELIMETER).matcher(text);
         List<TextComponent> sentences = new ArrayList<>();
         TextComponent textSentences = new Paragraph();
-        while (sentenceMatcher.find()) {
 
-            sentences.add(new Sentence(sentenceMatcher.group()));
+        while (sentenceMatcher.find()) {
+            TextComponent sentence = nextParser.parseText(sentenceMatcher.group());
+            sentences.add(sentence);
         }
 
-
-            textSentences.setComponents(sentences);
-/*        for(String paragraph : paragraphs) {
-            textParagraphs = nextParser.parseText(paragraph);
-        }*/
-
+        textSentences.setComponents(sentences);
             return textSentences;
         }
     }

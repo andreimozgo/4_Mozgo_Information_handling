@@ -7,4 +7,14 @@ import java.util.List;
  */
 public class Lexeme extends TextComponent {
     List<Word> wordExpressionList;
+    String lexeme;
+
+    public Lexeme(String lexeme) {
+        this.lexeme = lexeme;
+    }
+
+    @Override
+    public String toString() {
+        return lexeme;
+    }
 }
