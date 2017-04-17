@@ -7,6 +7,4 @@ import by.mozgo.handling.composite.TextComponent;
  */
 public interface TextParser {
     TextComponent parseText(String text);
-
-    String uniteText(TextComponent component);
 }

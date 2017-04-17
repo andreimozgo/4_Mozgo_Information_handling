@@ -1,5 +1,6 @@
 package by.mozgo.handling.chain;
 
+import by.mozgo.handling.composite.ComponentLevel;
 import by.mozgo.handling.composite.TextComponent;
 
 import java.util.ArrayList;
@@ -22,15 +23,11 @@ public class ParagraphParser implements TextParser {
         for (String paragraphString : paragraphStrings) {
             TextComponent paragraph;
             paragraph = nextParser.parseText(paragraphString);
+            paragraph.setLevel(ComponentLevel.PARAGRAPH);
             paragraphs.add(paragraph);
         }
 
         textComponent.setComponents(paragraphs);
         return textComponent;
-    }
-
-    @Override
-    public String uniteText(TextComponent component) {
-        return component.toString();
     }
 }

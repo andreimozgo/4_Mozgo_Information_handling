@@ -2,7 +2,6 @@ package test.by.mozgo.handling.chain;
 
 import by.mozgo.handling.chain.ParagraphParser;
 import by.mozgo.handling.composite.TextComponent;
-import by.mozgo.handling.logic.TextLogic;
 import by.mozgo.handling.reader.TextReader;
 import by.mozgo.handling.writer.TextWriter;
 import org.junit.Test;
@@ -18,6 +17,6 @@ public class TextParserTest {
         ParagraphParser paragraphParser = new ParagraphParser();
         TextComponent textComponent = paragraphParser.parseText(text);
         System.out.println(textComponent.getComponents().toString());
-        TextWriter.writeData(TextLogic.uniteText(textComponent));
+        TextWriter.writeData(textComponent.toString());
     }
 }

@@ -30,9 +30,4 @@ public class LexemeParser implements TextParser {
 
         return textLexemes;
     }
-
-    @Override
-    public String uniteText(TextComponent component) {
-        return component.toString();
-    }
 }

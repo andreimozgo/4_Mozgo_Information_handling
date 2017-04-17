@@ -7,6 +7,7 @@ import java.util.List;
  */
 public class TextComponent {
     protected List<TextComponent> components;
+    private ComponentLevel level;
 
     public List<TextComponent> getComponents() {
         return components;
@@ -16,8 +17,16 @@ public class TextComponent {
         this.components = components;
     }
 
+    public void setLevel(ComponentLevel level) {
+        this.level = level;
+    }
+
     @Override
     public String toString() {
-        return components.toString();
+        StringBuilder stringBuilder = new StringBuilder();
+        for (TextComponent component : components) {
+            stringBuilder.append(component.toString());
+        }
+        return stringBuilder.toString();
     }
 }
