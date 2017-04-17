@@ -5,10 +5,13 @@ package by.mozgo.handling.composite;
  */
 public class Lexeme extends TextComponent {
     private String lexeme;
-    private ComponentLevel level = ComponentLevel.LEXEME;
 
     public Lexeme(String lexeme) {
         this.lexeme = lexeme;
+    }
+
+    public String getLexeme() {
+        return lexeme;
     }
 
     @Override

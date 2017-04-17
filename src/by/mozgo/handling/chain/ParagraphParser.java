@@ -1,9 +1,7 @@
 package by.mozgo.handling.chain;
 
-import by.mozgo.handling.composite.ComponentLevel;
 import by.mozgo.handling.composite.TextComponent;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -16,18 +14,15 @@ public class ParagraphParser implements TextParser {
 
     @Override
     public TextComponent parseText(String text) {
-        List<String> paragraphStrings = Arrays.asList(text.split(PARAGRAPH_DELIMETER));
-        List<TextComponent> paragraphs = new ArrayList<>();
+        List<String> paragraphs = Arrays.asList(text.split(PARAGRAPH_DELIMETER));
         TextComponent textComponent = new TextComponent();
 
-        for (String paragraphString : paragraphStrings) {
-            TextComponent paragraph;
-            paragraph = nextParser.parseText(paragraphString);
-            paragraph.setLevel(ComponentLevel.PARAGRAPH);
-            paragraphs.add(paragraph);
+        for (String paragraph : paragraphs) {
+            TextComponent paragraphComponent;
+            paragraphComponent = nextParser.parseText(paragraph);
+            textComponent.add(paragraphComponent);
         }
 
-        textComponent.setComponents(paragraphs);
         return textComponent;
     }
 }

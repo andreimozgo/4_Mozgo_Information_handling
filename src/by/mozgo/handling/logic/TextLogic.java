@@ -1,11 +1,13 @@
 package by.mozgo.handling.logic;
 
+import by.mozgo.handling.composite.Lexeme;
 import by.mozgo.handling.composite.TextComponent;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -13,29 +15,48 @@ import java.util.List;
  */
 public class TextLogic {
     private static final Logger LOGGER = LogManager.getLogger();
-/*    public void swapFirstLastLexeme(TextComponent text) {
-        List<TextComponent> sentences = text.receiveComponents(TextChildLevel.SENTENCE);
-        sentences.forEach((TextComponent component) -> {
-            List<TextComponent> lexemes = component.receiveComponents(TextChildLevel.LEXEME);
+
+    public static void swapFirstLastLexeme(TextComponent text) {
+        List<TextComponent> sentences = getAllSentences(text);
+        sentences.forEach((TextComponent sentence) -> {
+            List<TextComponent> lexemes = sentence.getComponents();
             TextComponent temp = lexemes.get(0);
             lexemes.set(0, lexemes.get(lexemes.size() - 1));
             lexemes.set(lexemes.size() - 1, temp);
         });
-    }*/
+        LOGGER.log(Level.INFO, "{}", text);
+    }
 
-    public static void sortByLexemeNumber(TextComponent text) {
-        List<TextComponent> sentences = getAllSentences(text);
+    public static void sortByLexemeNumber(TextComponent textComponent) {
+        List<TextComponent> sentences = getAllSentences(textComponent);
         sentences.sort(new ComponentsSizeComporator());
         for (TextComponent sentence : sentences) {
             LOGGER.log(Level.INFO, "{} lexemes: {}", sentence.getComponents().size(), sentence);
         }
     }
 
-    protected static List<TextComponent> getAllSentences(TextComponent text) {
-        List<TextComponent> sentences = new ArrayList<>();
-        for (TextComponent paragraph : text.getComponents()) {
-            sentences.addAll(paragraph.getComponents());
+    public static void removeSpecificLexemes(TextComponent textComponent, char firstCharacter, int length) {
+        List<TextComponent> sentenceComponents = getAllSentences(textComponent);
+        for (TextComponent sentenceComponent : sentenceComponents) {
+            List<TextComponent> lexemeComponents = sentenceComponent.getComponents();
+            Iterator<TextComponent> iterator = lexemeComponents.iterator();
+            while (iterator.hasNext()) {
+                TextComponent lexemeComponent = iterator.next();
+                String lexeme = ((Lexeme) lexemeComponent).getLexeme();
+                if (lexeme.charAt(0) == firstCharacter && lexeme.length() == length) {
+                    iterator.remove();
+                    LOGGER.log(Level.INFO, "Lexeme '{}' has been removed", lexeme);
+                }
+            }
         }
-        return sentences;
+
+    }
+
+    protected static List<TextComponent> getAllSentences(TextComponent textComponent) {
+        List<TextComponent> sentenceComponents = new ArrayList<>();
+        for (TextComponent paragraphComponent : textComponent.getComponents()) {
+            sentenceComponents.addAll(paragraphComponent.getComponents());
+        }
+        return sentenceComponents;
     }
 }

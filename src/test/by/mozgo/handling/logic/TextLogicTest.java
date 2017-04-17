@@ -25,4 +25,15 @@ public class TextLogicTest {
     public void testSortByLexemeNumber() {
         TextLogic.sortByLexemeNumber(textComponent);
     }
+
+    @Test
+    public void testSwapFirstLastLexeme() {
+        TextLogic.swapFirstLastLexeme(textComponent);
+    }
+
+    @Test
+    public void testRemoveSpecificLexemes() {
+        TextLogic.removeSpecificLexemes(textComponent, 'r', 8);
+    }
+
 }

@@ -1,12 +1,9 @@
 package by.mozgo.handling.chain;
 
-import by.mozgo.handling.composite.ComponentLevel;
 import by.mozgo.handling.composite.TextComponent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -21,16 +18,13 @@ public class SentenceParser implements TextParser {
     @Override
     public TextComponent parseText(String text) {
         Matcher sentenceMatcher = Pattern.compile(SENTENCE_DELIMETER).matcher(text);
-        List<TextComponent> sentences = new ArrayList<>();
-        TextComponent textSentences = new TextComponent();
+        TextComponent paragraphComponent = new TextComponent();
 
         while (sentenceMatcher.find()) {
-            TextComponent sentence = nextParser.parseText(sentenceMatcher.group());
-            sentence.setLevel(ComponentLevel.SENTENCE);
-            sentences.add(sentence);
+            TextComponent sentenceComponent = nextParser.parseText(sentenceMatcher.group());
+            paragraphComponent.add(sentenceComponent);
         }
 
-        textSentences.setComponents(sentences);
-        return textSentences;
+        return paragraphComponent;
     }
 }
