@@ -776,3 +776,57 @@ java.io.FileNotFoundException:
     It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using (71-(2*i--*(3*(2-1/2*2)-2)-10/2))*++i Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
  It is a (-5+1/2*(2+5*2- --j))*1200 established fact that a reader will be of a page when looking at its layout.
  Bye.
+2017-04-17 20:41:27 [INFO ] (TextLogic.java:30) -  Bye .
+2017-04-17 20:41:27 [INFO ] (TextLogic.java:30) -  It is a (-5+1/2*(2+5*2- --j))*1200 established fact that a reader will be of a page when looking at its layout.
+2017-04-17 20:41:27 [INFO ] (TextLogic.java:30) -  It has survived not only five centuries, but also the leap into 13+ i-- electronic cos(Pi) typesetting, remaining 3+5 essentially 6+9*(3-4) unchanged.
+2017-04-17 20:41:27 [INFO ] (TextLogic.java:30) -  It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+2017-04-17 20:41:27 [INFO ] (TextLogic.java:30) -  The point of using (71-(2*i--*(3*(2-1/2*2)-2)-10/2))*++i Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+2017-04-17 20:41:27 [INFO ] (TextLogic.java:30) -  It was popularised in the 5*(1*2*(3*(4*(5- --j + 4)-3)-2)-1) with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+2017-04-17 20:43:06 [INFO ] (TextLogic.java:30) - 2lexemes:  Bye .
+2017-04-17 20:43:06 [INFO ] (TextLogic.java:30) - 19lexemes:  It is a (-5+1/2*(2+5*2- --j))*1200 established fact that a reader will be of a page when looking at its layout.
+2017-04-17 20:43:06 [INFO ] (TextLogic.java:30) - 21lexemes:  It has survived not only five centuries, but also the leap into 13+ i-- electronic cos(Pi) typesetting, remaining 3+5 essentially 6+9*(3-4) unchanged.
+2017-04-17 20:43:06 [INFO ] (TextLogic.java:30) - 24lexemes:  It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+2017-04-17 20:43:06 [INFO ] (TextLogic.java:30) - 30lexemes:  The point of using (71-(2*i--*(3*(2-1/2*2)-2)-10/2))*++i Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+2017-04-17 20:43:06 [INFO ] (TextLogic.java:30) - 31lexemes:  It was popularised in the 5*(1*2*(3*(4*(5- --j + 4)-3)-2)-1) with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+2017-04-17 20:48:03 [INFO ] (TextLogic.java:30) - 2 lexemes:  Bye .
+2017-04-17 20:48:03 [INFO ] (TextLogic.java:30) - 19 lexemes:  It is a (-5+1/2*(2+5*2- --j))*1200 established fact that a reader will be of a page when looking at its layout.
+2017-04-17 20:48:03 [INFO ] (TextLogic.java:30) - 21 lexemes:  It has survived not only five centuries, but also the leap into 13+ i-- electronic cos(Pi) typesetting, remaining 3+5 essentially 6+9*(3-4) unchanged.
+2017-04-17 20:48:03 [INFO ] (TextLogic.java:30) - 24 lexemes:  It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+2017-04-17 20:48:03 [INFO ] (TextLogic.java:30) - 30 lexemes:  The point of using (71-(2*i--*(3*(2-1/2*2)-2)-10/2))*++i Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+2017-04-17 20:48:03 [INFO ] (TextLogic.java:30) - 31 lexemes:  It was popularised in the 5*(1*2*(3*(4*(5- --j + 4)-3)-2)-1) with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+2017-04-17 20:49:40 [INFO ] (TextLogic.java:30) - 0 lexemes: 
+2017-04-17 20:49:40 [INFO ] (TextLogic.java:30) - 18 lexemes:  is a  (-5+1/2*(2+5*2- --j))*1200 established fact that a reader will be of a page when looking at its layout.
+2017-04-17 20:49:40 [INFO ] (TextLogic.java:30) - 20 lexemes:  has survived not only five centuries, but also the leap into  13+ i-- electronic cos(Pi) typesetting, remaining  3+5 essentially  6+9*(3-4) unchanged.
+2017-04-17 20:49:40 [INFO ] (TextLogic.java:30) - 23 lexemes:  is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+2017-04-17 20:49:40 [INFO ] (TextLogic.java:30) - 29 lexemes:  point of using  (71-(2*i--*(3*(2-1/2*2)-2)-10/2))*++i Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+2017-04-17 20:49:40 [INFO ] (TextLogic.java:30) - 30 lexemes:  was popularised in the  5*(1*2*(3*(4*(5- --j + 4)-3)-2)-1) with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+2017-04-17 20:50:44 [INFO ] (TextLogic.java:30) - 2 lexemes:  Bye. 
+2017-04-17 20:50:44 [INFO ] (TextLogic.java:30) - 40 lexemes:  It  is  a  (-5+1/2*(2+5*2-  --j))*1200  established  fact  that  a  reader  will  be  of  a  page  when  looking  at  its  layout. 
+2017-04-17 20:50:44 [INFO ] (TextLogic.java:30) - 44 lexemes:  It  has  survived  not  only  five  centuries,  but  also  the  leap  into  13+  i--  electronic  cos(Pi)  typesetting,  remaining  3+5  essentially  6+9*(3-4)  unchanged. 
+2017-04-17 20:50:44 [INFO ] (TextLogic.java:30) - 48 lexemes:  It  is  a  long  established  fact  that  a  reader  will  be  distracted  by  the  readable  content  of  a  page  when  looking  at  its  layout. 
+2017-04-17 20:50:44 [INFO ] (TextLogic.java:30) - 60 lexemes:  The  point  of  using  (71-(2*i--*(3*(2-1/2*2)-2)-10/2))*++i  Ipsum  is  that  it  has  a  more-or-less  normal  distribution  of  letters,  as  opposed  to  using  'Content  here,  content  here',  making  it  look  like  readable  English. 
+2017-04-17 20:50:44 [INFO ] (TextLogic.java:30) - 68 lexemes:  It  was  popularised  in  the  5*(1*2*(3*(4*(5-  --j  +  4)-3)-2)-1)  with  the  release  of  Letraset  sheets  containing  Lorem  Ipsum  passages,  and  more  recently  with  desktop  publishing  software  like  Aldus  PageMaker  including  versions  of  Lorem  Ipsum. 
+2017-04-17 20:50:55 [INFO ] (TextLogic.java:30) - 2 lexemes:  Bye. 
+2017-04-17 20:50:55 [INFO ] (TextLogic.java:30) - 40 lexemes:  It  is  a  (-5+1/2*(2+5*2-  --j))*1200  established  fact  that  a  reader  will  be  of  a  page  when  looking  at  its  layout. 
+2017-04-17 20:50:55 [INFO ] (TextLogic.java:30) - 44 lexemes:  It  has  survived  not  only  five  centuries,  but  also  the  leap  into  13+  i--  electronic  cos(Pi)  typesetting,  remaining  3+5  essentially  6+9*(3-4)  unchanged. 
+2017-04-17 20:50:55 [INFO ] (TextLogic.java:30) - 48 lexemes:  It  is  a  long  established  fact  that  a  reader  will  be  distracted  by  the  readable  content  of  a  page  when  looking  at  its  layout. 
+2017-04-17 20:50:55 [INFO ] (TextLogic.java:30) - 60 lexemes:  The  point  of  using  (71-(2*i--*(3*(2-1/2*2)-2)-10/2))*++i  Ipsum  is  that  it  has  a  more-or-less  normal  distribution  of  letters,  as  opposed  to  using  'Content  here,  content  here',  making  it  look  like  readable  English. 
+2017-04-17 20:50:55 [INFO ] (TextLogic.java:30) - 68 lexemes:  It  was  popularised  in  the  5*(1*2*(3*(4*(5-  --j  +  4)-3)-2)-1)  with  the  release  of  Letraset  sheets  containing  Lorem  Ipsum  passages,  and  more  recently  with  desktop  publishing  software  like  Aldus  PageMaker  including  versions  of  Lorem  Ipsum. 
+2017-04-17 20:52:39 [INFO ] (TextLogic.java:30) - 2 lexemes:  Bye .
+2017-04-17 20:52:39 [INFO ] (TextLogic.java:30) - 19 lexemes:  It is a (-5+1/2*(2+5*2- --j))*1200 established fact that a reader will be of a page when looking at its layout.
+2017-04-17 20:52:39 [INFO ] (TextLogic.java:30) - 21 lexemes:  It has survived not only five centuries, but also the leap into 13+ i-- electronic cos(Pi) typesetting, remaining 3+5 essentially 6+9*(3-4) unchanged.
+2017-04-17 20:52:39 [INFO ] (TextLogic.java:30) - 24 lexemes:  It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+2017-04-17 20:52:39 [INFO ] (TextLogic.java:30) - 30 lexemes:  The point of using (71-(2*i--*(3*(2-1/2*2)-2)-10/2))*++i Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+2017-04-17 20:52:39 [INFO ] (TextLogic.java:30) - 31 lexemes:  It was popularised in the 5*(1*2*(3*(4*(5- --j + 4)-3)-2)-1) with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+2017-04-17 21:14:31 [INFO ] (TextLogic.java:30) - 1 lexemes:  .
+2017-04-17 21:14:31 [INFO ] (TextLogic.java:30) - 20 lexemes:                                        .
+2017-04-17 21:14:31 [INFO ] (TextLogic.java:30) - 22 lexemes:              ,                    ,          .
+2017-04-17 21:14:31 [INFO ] (TextLogic.java:30) - 24 lexemes:                                                .
+2017-04-17 21:14:31 [INFO ] (TextLogic.java:30) - 30 lexemes:                                ,            ,    ,            .
+2017-04-17 21:14:31 [INFO ] (TextLogic.java:30) - 34 lexemes:                                      ,                              .
+2017-04-17 23:56:53 [INFO ] (TextLogic.java:30) - 2 lexemes:  Bye .
+2017-04-17 23:56:53 [INFO ] (TextLogic.java:30) - 19 lexemes:  It is a (-5+1/2*(2+5*2- --j))*1200 established fact that a reader will be of a page when looking at its layout.
+2017-04-17 23:56:53 [INFO ] (TextLogic.java:30) - 21 lexemes:  It has survived not only five centuries, but also the leap into 13+ i-- electronic cos(Pi) typesetting, remaining 3+5 essentially 6+9*(3-4) unchanged.
+2017-04-17 23:56:53 [INFO ] (TextLogic.java:30) - 24 lexemes:  It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+2017-04-17 23:56:53 [INFO ] (TextLogic.java:30) - 30 lexemes:  The point of using (71-(2*i--*(3*(2-1/2*2)-2)-10/2))*++i Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+2017-04-17 23:56:53 [INFO ] (TextLogic.java:30) - 31 lexemes:  It was popularised in the 5*(1*2*(3*(4*(5- --j + 4)-3)-2)-1) with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
