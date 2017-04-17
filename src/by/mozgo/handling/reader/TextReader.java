@@ -28,7 +28,6 @@ public class TextReader {
                 text.append("\n");
                 text.append(line);
             }
-            //LOGGER.log(Level.INFO, "{}", text);
         } catch (IOException e) {
             LOGGER.log(Level.FATAL, "Input file not found! {}", e);
             throw new RuntimeException(e + "Input file not found!", e);

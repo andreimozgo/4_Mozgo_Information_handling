@@ -19,7 +19,7 @@ public class ParagraphParser implements TextParser {
         List<TextComponent> paragraphs = new ArrayList<>();
         TextComponent textComponent = new TextComponent();
 
-        for(String paragraphString : paragraphStrings) {
+        for (String paragraphString : paragraphStrings) {
             TextComponent paragraph;
             paragraph = nextParser.parseText(paragraphString);
             paragraphs.add(paragraph);
@@ -27,5 +27,10 @@ public class ParagraphParser implements TextParser {
 
         textComponent.setComponents(paragraphs);
         return textComponent;
+    }
+
+    @Override
+    public String uniteText(TextComponent component) {
+        return component.toString();
     }
 }

@@ -1,13 +1,10 @@
 package by.mozgo.handling.composite;
 
-import java.util.List;
-
 /**
  * @author Andrei Mozgo
  */
 public class Lexeme extends TextComponent {
-    List<Word> wordExpressionList;
-    String lexeme;
+    private String lexeme;
 
     public Lexeme(String lexeme) {
         this.lexeme = lexeme;

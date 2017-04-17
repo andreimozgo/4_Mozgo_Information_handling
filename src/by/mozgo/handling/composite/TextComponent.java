@@ -6,16 +6,14 @@ import java.util.List;
  * @author Andrei Mozgo
  */
 public class TextComponent {
-    List<TextComponent> components;
-
-
-
-    public void setComponents(List<TextComponent> components) {
-        this.components = components;
-    }
+    protected List<TextComponent> components;
 
     public List<TextComponent> getComponents() {
         return components;
+    }
+
+    public void setComponents(List<TextComponent> components) {
+        this.components = components;
     }
 
     @Override

@@ -1,6 +1,5 @@
 package by.mozgo.handling.chain;
 
-import by.mozgo.handling.composite.Paragraph;
 import by.mozgo.handling.composite.TextComponent;
 
 import java.util.ArrayList;
@@ -19,7 +18,7 @@ public class SentenceParser implements TextParser {
     public TextComponent parseText(String text) {
         Matcher sentenceMatcher = Pattern.compile(SENTENCE_DELIMETER).matcher(text);
         List<TextComponent> sentences = new ArrayList<>();
-        TextComponent textSentences = new Paragraph();
+        TextComponent textSentences = new TextComponent();
 
         while (sentenceMatcher.find()) {
             TextComponent sentence = nextParser.parseText(sentenceMatcher.group());
@@ -27,6 +26,11 @@ public class SentenceParser implements TextParser {
         }
 
         textSentences.setComponents(sentences);
-            return textSentences;
-        }
+        return textSentences;
     }
+
+    @Override
+    public String uniteText(TextComponent component) {
+        return component.toString();
+    }
+}

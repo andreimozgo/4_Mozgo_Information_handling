@@ -6,5 +6,7 @@ import by.mozgo.handling.composite.TextComponent;
  * @author Andrei Mozgo
  */
 public interface TextParser {
-        TextComponent parseText(String text);
+    TextComponent parseText(String text);
+
+    String uniteText(TextComponent component);
 }
