@@ -18,16 +18,16 @@ public class TextWriter {
 
     public static void writeData(String text) {
 
+        if (text.isEmpty()) {
+            LOGGER.log(Level.FATAL, "Output data is empty! ");
+            throw new RuntimeException("Output data is empty! ");
+        }
 
         try (BufferedWriter out = new BufferedWriter(new FileWriter(new File(OUTPUT_FILE)))) {
             out.write(text);
         } catch (IOException e) {
             LOGGER.log(Level.FATAL, "File output problem {}", e);
             throw new RuntimeException("File output problem! " + e, e);
-        }
-        if (text.isEmpty()) {
-            LOGGER.log(Level.FATAL, "Output data is empty! ");
-            throw new RuntimeException("Output data is empty! ");
         }
     }
 }

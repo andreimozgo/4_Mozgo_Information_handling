@@ -49,7 +49,6 @@ public class TextLogic {
                 }
             }
         }
-
     }
 
     protected static List<TextComponent> getAllSentences(TextComponent textComponent) {
