@@ -1,9 +1,6 @@
 package by.mozgo.handling.interpreter;
 
-/**
- * @author Andrei Mozgo
- */
-public class MultiplyExpr extends AbstractExpr {
+class MultiplyExpression extends AbstractExpression {
     @Override
     void interpret(Context context) {
         double rightOperand = defineOperand(context);

@@ -1,12 +1,9 @@
 package by.mozgo.handling.interpreter;
 
-/**
- * @author Andrei Mozgo
- */
-class NonTerminalExpr extends AbstractExpr {
+class NonTerminalExpression extends AbstractExpression {
     private String value;
 
-    NonTerminalExpr(String value) {
+    NonTerminalExpression(String value) {
         this.value = value;
     }
 

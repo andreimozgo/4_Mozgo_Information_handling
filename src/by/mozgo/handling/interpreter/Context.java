@@ -3,13 +3,10 @@ package by.mozgo.handling.interpreter;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-/**
- * @author Andrei Mozgo
- */
 class Context {
     private Deque<String> contextValues;
-    private double i = 89;
-    private double j = 42;
+    private double i = 10;
+    private double j = 20;
 
     Context() {
         contextValues = new ArrayDeque<>();

@@ -873,3 +873,17 @@ java.io.FileNotFoundException:
 2017-04-19 17:10:37 [FATAL] (TextWriter.java:22) - Output data is empty! 
 2017-04-19 18:43:01 [INFO ] (TextReader.java:39) - File has been read successfully. 
 2017-04-19 18:43:01 [INFO ] (ParagraphParser.java:29) - Text has been parsed successfully
+2017-04-19 19:18:30 [INFO ] (TextReader.java:39) - File has been read successfully. 
+2017-04-19 19:18:30 [INFO ] (ParagraphParser.java:30) - Text has been parsed successfully
+2017-04-19 21:21:59 [INFO ] (TextReader.java:39) - File has been read successfully. 
+2017-04-19 21:22:00 [INFO ] (ParagraphParser.java:30) - Text has been parsed successfully
+2017-04-19 21:23:18 [INFO ] (TextReader.java:39) - File has been read successfully. 
+2017-04-19 21:23:18 [INFO ] (ParagraphParser.java:30) - Text has been parsed successfully
+2017-04-19 21:25:36 [INFO ] (TextReader.java:39) - File has been read successfully. 
+2017-04-19 21:25:36 [INFO ] (ParagraphParser.java:30) - Text has been parsed successfully
+2017-04-19 21:26:03 [INFO ] (TextReader.java:39) - File has been read successfully. 
+2017-04-19 21:26:03 [INFO ] (ParagraphParser.java:30) - Text has been parsed successfully
+2017-04-19 21:36:43 [INFO ] (TextReader.java:39) - File has been read successfully. 
+2017-04-19 21:36:43 [INFO ] (ParagraphParser.java:30) - Text has been parsed successfully
+2017-04-19 21:37:42 [INFO ] (TextReader.java:39) - File has been read successfully. 
+2017-04-19 21:37:42 [INFO ] (ParagraphParser.java:30) - Text has been parsed successfully

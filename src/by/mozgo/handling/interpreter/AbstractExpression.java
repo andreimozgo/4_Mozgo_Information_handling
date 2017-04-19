@@ -1,9 +1,6 @@
 package by.mozgo.handling.interpreter;
 
-/**
- * @author Andrei Mozgo
- */
-abstract class AbstractExpr {
+abstract class AbstractExpression {
     abstract void interpret(Context context);
 
     double defineOperand(Context context) {

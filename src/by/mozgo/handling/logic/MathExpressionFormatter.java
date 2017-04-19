@@ -7,20 +7,17 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * @author Andrei Mozgo
- */
 class MathExpressionFormatter {
-    private final String ICREMENT_PREFIX_I = "(\\+\\+i)";
-    private final String INREMENT_POSTFIX_I = "(i\\+\\+)";
-    private final String DECREMENT_PREFIX_I = "(--i)";
-    private final String ICREMENT_PREFIX_J = "(\\+\\+j)";
-    private final String INCREMENT_POSTFIX_J = "(j\\+\\+)";
-    private final String DECREMENT_POSTFIX_I = "(i--)";
-    private final String DECREMENT_PREFIX_J = "(--j)";
-    private final String DECREMENT_POSTFIX_J = "(j--)";
-    private final String POSITIVE_NUM = "\\d";
-    private final String NEGATIVE_NUM = "(-\\d)";
+    private static final String ICREMENT_PREFIX_I = "(\\+\\+i)";
+    private static final String INREMENT_POSTFIX_I = "(i\\+\\+)";
+    private static final String DECREMENT_PREFIX_I = "(--i)";
+    private static final String ICREMENT_PREFIX_J = "(\\+\\+j)";
+    private static final String INCREMENT_POSTFIX_J = "(j\\+\\+)";
+    private static final String DECREMENT_POSTFIX_I = "(i--)";
+    private static final String DECREMENT_PREFIX_J = "(--j)";
+    private static final String DECREMENT_POSTFIX_J = "(j--)";
+    private static final String POSITIVE_NUM = "\\d";
+    private static final String NEGATIVE_NUM = "(-\\d)";
     private List<String> positives = new ArrayList<>();
     private List<String> negatives = new ArrayList<>();
 
@@ -47,6 +44,7 @@ class MathExpressionFormatter {
             positives.add(m.group());
             expr = expr.replace(m.group(), "P");
         }
+
         return expr;
     }
 
@@ -68,6 +66,7 @@ class MathExpressionFormatter {
                     break;
                 default:
                     newExpr.append(whitespace).append(c).append(whitespace);
+
             }
         }
         return newExpr.toString().trim();

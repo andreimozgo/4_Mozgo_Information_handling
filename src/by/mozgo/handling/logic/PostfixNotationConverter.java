@@ -5,22 +5,21 @@ import by.mozgo.handling.exception.TextHandlingException;
 
 import java.util.ArrayDeque;
 
-/**
- * @author Andrei Mozgo
- */
+
 public class PostfixNotationConverter {
-    private final char WHITESPACE = ' ';
-    private final int PLUS_MINUS_PRIORITY = 1;
-    private final int MULTIPLY_DIVIDE_PRIORITY = 2;
-    private final int INCREMENT_DECREMENT_PRIORITY = 3;
-    private final String DELIMITER = "\\s+";
+    private static final String OPERATIONS = "[\\+-=\\*/{}£#]";
+    private static final String WHITESPACES = "\\s+";
+    private static final char WHITESPACE = ' ';
+    private static final int PLUS_MINUS_PRIORITY = 1;
+    private static final int MULTIPLY_DIVIDE_PRIORITY = 2;
+    private static final int INCREMENT_DECREMENT_PRIOROTY = 3;
     private ArrayDeque<String> operations = new ArrayDeque<>();
-    private MathExpressionFormatter formatter = new MathExpressionFormatter();
 
     public String convertExpression(TextComponent mathExpression) throws TextHandlingException {
+        MathExpressionFormatter formatter = new MathExpressionFormatter();
         String expression = formatter.formatExpression(mathExpression);
         StringBuilder postfixExpression = new StringBuilder();
-        for (String token : expression.split(DELIMITER)) {
+        for (String token : expression.split(WHITESPACES)) {
             switch (token) {
                 case "+":
                 case "-":
@@ -34,7 +33,7 @@ public class PostfixNotationConverter {
                 case "#":
                 case "{":
                 case "}":
-                    putByPriority(token, INCREMENT_DECREMENT_PRIORITY, postfixExpression);
+                    putByPriority(token, INCREMENT_DECREMENT_PRIOROTY, postfixExpression);
                     break;
                 case "(":
                     operations.push(token);
@@ -51,6 +50,19 @@ public class PostfixNotationConverter {
             postfixExpression.append(operations.pop()).append(WHITESPACE);
         }
         return postfixExpression.toString().trim();
+    }
+
+    private void gotPair(StringBuilder notation) throws TextHandlingException {
+        while (!operations.isEmpty()) {
+            String onTop = operations.pop();
+            if (onTop.equals("(")) {
+                break;
+            } else if (onTop.matches(OPERATIONS)) {
+                notation.append(onTop).append(WHITESPACE);
+            } else {
+                throw new TextHandlingException("Error in expression");
+            }
+        }
     }
 
     private void putByPriority(String thisOperation, int priority, StringBuilder notation)
@@ -75,7 +87,7 @@ public class PostfixNotationConverter {
                     case "#":
                     case "{":
                     case "}":
-                        topPriority = INCREMENT_DECREMENT_PRIORITY;
+                        topPriority = INCREMENT_DECREMENT_PRIOROTY;
                         break;
                     default:
                         throw new TextHandlingException("Unsupported operation");
@@ -89,16 +101,5 @@ public class PostfixNotationConverter {
             }
         }
         operations.push(thisOperation);
-    }
-
-    private void gotPair(StringBuilder notation) {
-        while (!operations.isEmpty()) {
-            String onTop = operations.pop();
-            if (onTop.equals("(")) {
-                break;
-            } else {
-                notation.append(onTop).append(WHITESPACE);
-            }
-        }
     }
 }

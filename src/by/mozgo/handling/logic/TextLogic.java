@@ -3,7 +3,7 @@ package by.mozgo.handling.logic;
 import by.mozgo.handling.composite.Lexeme;
 import by.mozgo.handling.composite.TextComponent;
 import by.mozgo.handling.exception.TextHandlingException;
-import by.mozgo.handling.interpreter.InterpreterClient;
+import by.mozgo.handling.interpreter.Client;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -82,7 +82,7 @@ public class TextLogic {
                     if (preparedExpr == null) {
                         LOGGER.log(Level.WARN, "Can't calculate an expression, leave old text");
                     } else {
-                        Lexeme newLexemeConponent = new Lexeme(new InterpreterClient(preparedExpr).calculate() + SPACE);
+                        Lexeme newLexemeConponent = new Lexeme(new Client(preparedExpr).calculate() + SPACE);
                         lexemeComponents.set(i, newLexemeConponent);
                     }
                 }

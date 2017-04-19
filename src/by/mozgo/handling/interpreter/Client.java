@@ -3,14 +3,11 @@ package by.mozgo.handling.interpreter;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author Andrei Mozgo
- */
-public class InterpreterClient {
+public class Client {
     private static final String SPACES = "\\s+";
-    private List<AbstractExpr> expressionList;
+    private List<AbstractExpression> expressionList;
 
-    public InterpreterClient(String expression) {
+    public Client(String expression) {
         expressionList = new ArrayList<>();
         parse(expression);
     }
@@ -22,35 +19,34 @@ public class InterpreterClient {
             }
             switch (token) {
                 case "+":
-                    expressionList.add(new AddExpr());
+                    expressionList.add(new AddExpression());
                     break;
                 case "-":
-                    expressionList.add(new SubstractExpr());
+                    expressionList.add(new SubstractExpression());
                     break;
                 case "*":
-                    expressionList.add(new MultiplyExpr());
+                    expressionList.add(new MultiplyExpression());
                     break;
                 case "/":
-                    expressionList.add(new DivideExpr());
+                    expressionList.add(new DivideExpression());
                     break;
                 case "#":
-                    expressionList.add(new PreDecrementExpr());
+                    expressionList.add(new BeforeDecrement());
                     break;
                 case "£":
-                    expressionList.add(new PreIncrementExpr());
+                    expressionList.add(new BeforeIncrement());
                     break;
                 case "{":
-                    expressionList.add(new PostIncrementExpr());
+                    expressionList.add(new AfterIncrement());
                     break;
                 case "}":
-                    expressionList.add(new PostDecrementExpr());
+                    expressionList.add(new AfterDecrement());
                     break;
                 default:
-                    expressionList.add(new NonTerminalExpr(token));
+                    expressionList.add(new NonTerminalExpression(token));
             }
         }
     }
-
 
     public String calculate() {
         Context context = new Context();

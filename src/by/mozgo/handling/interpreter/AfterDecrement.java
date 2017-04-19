@@ -1,9 +1,6 @@
 package by.mozgo.handling.interpreter;
 
-/**
- * @author Andrei Mozgo
- */
-public class PostDecrementExpr extends AbstractExpr {
+class AfterDecrement extends AbstractExpression {
     @Override
     void interpret(Context context) {
         String var = context.popValue();
