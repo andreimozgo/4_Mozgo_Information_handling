@@ -947,3 +947,5 @@ java.io.FileNotFoundException:
 2017-04-20 01:41:54 [INFO ] (ParagraphParser.java:29) - Text has been parsed successfully
 2017-04-20 01:46:17 [INFO ] (ParagraphParser.java:29) - Text has been parsed successfully
 2017-04-20 01:46:43 [INFO ] (ParagraphParser.java:29) - Text has been parsed successfully
+2017-04-20 01:59:05 [INFO ] (ParagraphParser.java:29) - Text has been parsed successfully
+2017-04-20 02:17:01 [INFO ] (ParagraphParser.java:29) - Text has been parsed successfully

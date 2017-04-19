@@ -54,7 +54,9 @@ public class TextLogicTest {
     public void testCalculateExpressions() {
         String expected = "Five centuries, but also the leap. It has survived not only. " +
                 "Into 23.0 electronic typesetting, remaining 4.0 leap.";
-        String actual = TextLogic.calculateExpressions(textComponent);
+        int i = 10;
+        int j = 20;
+        String actual = TextLogic.calculateExpressions(textComponent, i, j);
         Assert.assertEquals(expected, actual);
 
     }

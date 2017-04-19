@@ -8,11 +8,13 @@ import java.util.Deque;
  */
 class Context {
     private Deque<String> contextValues;
-    private double i = 10;
-    private double j = 20;
+    private double i;
+    private double j;
 
-    Context() {
+    Context(int i, int j) {
         contextValues = new ArrayDeque<>();
+        this.i = i;
+        this.j = j;
     }
 
     String popValue() {

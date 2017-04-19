@@ -62,7 +62,7 @@ public class TextLogic {
         return textComponent.toString();
     }
 
-    public static String calculateExpressions(TextComponent textComponent) {
+    public static String calculateExpressions(TextComponent textComponent, int i, int j) {
         MathExpressionFormatter formatter = new MathExpressionFormatter();
         Lexeme lexemeComponent;
         String formattedExpression = null;
@@ -70,8 +70,8 @@ public class TextLogic {
         List<TextComponent> sentenceComponents = getAllSentences(textComponent);
         for (TextComponent sentenceComponent : sentenceComponents) {
             List<TextComponent> lexemeComponents = sentenceComponent.getComponents();
-            for (int i = 0; i < lexemeComponents.size(); i++) {
-                lexemeComponent = (Lexeme) lexemeComponents.get(i);
+            for (int index = 0; index < lexemeComponents.size(); index++) {
+                lexemeComponent = (Lexeme) lexemeComponents.get(index);
                 if (lexemeComponent.getLexeme().matches(MATH_PATTERN)) {
                     try {
                         formattedExpression = formatter.format(lexemeComponent);
@@ -81,8 +81,8 @@ public class TextLogic {
                     if (formattedExpression == null) {
                         LOGGER.log(Level.WARN, "Can't convert expression");
                     } else {
-                        Lexeme newLexemeComponent = new Lexeme(new Client(formattedExpression).calculate());
-                        lexemeComponents.set(i, newLexemeComponent);
+                        Lexeme newLexemeComponent = new Lexeme(new Client(formattedExpression, i, j).calculate());
+                        lexemeComponents.set(index, newLexemeComponent);
                     }
                 }
             }

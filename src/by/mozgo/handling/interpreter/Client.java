@@ -9,14 +9,18 @@ import java.util.List;
 public class Client {
     private static final String SPACES = "\\p{Blank}+";
     private List<AbstractExpression> expressions;
+    private int i;
+    private int j;
 
-    public Client(String expression) {
+    public Client(String expression, int i, int j) {
         expressions = new ArrayList<>();
+        this.i = i;
+        this.j = j;
         parse(expression);
     }
 
     public String calculate() {
-        Context context = new Context();
+        Context context = new Context(i, j);
         expressions.forEach((term) -> term.interpret(context));
         return context.popValue();
     }
