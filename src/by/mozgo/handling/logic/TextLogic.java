@@ -2,6 +2,8 @@ package by.mozgo.handling.logic;
 
 import by.mozgo.handling.composite.Lexeme;
 import by.mozgo.handling.composite.TextComponent;
+import by.mozgo.handling.exception.TextHandlingException;
+import by.mozgo.handling.interpreter.InterpreterClient;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -15,6 +17,7 @@ import java.util.List;
  */
 public class TextLogic {
     private static final Logger LOGGER = LogManager.getLogger();
+    private static final String MATH_PATTERN = "([\\d(i\\-][\\d()ij+\\-*/\\p{Blank}]+[\\-\\d)ij+])|\\+";
 
     public static void swapFirstLastLexeme(TextComponent text) {
         List<TextComponent> sentences = getAllSentences(text);
@@ -57,5 +60,50 @@ public class TextLogic {
             sentenceComponents.addAll(paragraphComponent.getComponents());
         }
         return sentenceComponents;
+    }
+
+    public static void calculateExpressions(TextComponent textComponent) {
+        PostfixNotationConverter converter = new PostfixNotationConverter();
+        Lexeme lexemeComponent;
+        List<TextComponent> sentenceComponents = getAllSentences(textComponent);
+        for (TextComponent sentenceComponent : sentenceComponents) {
+            List<TextComponent> lexemeComponents = sentenceComponent.getComponents();
+            for (int i = 0; i < lexemeComponents.size(); i++) {
+                lexemeComponent = (Lexeme) lexemeComponents.get(i);
+                if (lexemeComponent.getLexeme().matches(MATH_PATTERN)) {
+
+                    String preparedExpr = null;
+                    try {
+                        preparedExpr = converter.convertExpression(lexemeComponent);
+                    } catch (TextHandlingException e) {
+                        LOGGER.log(Level.INFO, "Error in expression");
+                    }
+                    String newExpr = new InterpreterClient(preparedExpr).calculate();
+                    MathExpression result = new MathExpression(newExpr + ' ');
+                    sentence.receiveChilds().add(i, result);
+                }
+            }
+        }
+    }
+
+    protected static String uniteExpressions(TextComponent textComponent) {
+        List<TextComponent> sentenceComponents = getAllSentences(textComponent);
+        for (TextComponent sentenceComponent : sentenceComponents) {
+            List<TextComponent> lexemeComponents = sentenceComponent.getComponents();
+            int i = 0;
+            while (i < lexemeComponents.size() - 1) {
+                if (((Lexeme) lexemeComponents.get(i)).getLexeme().matches(MATH_PATTERN) &&
+                        ((Lexeme) lexemeComponents.get(i + 1)).getLexeme().matches(MATH_PATTERN)) {
+                    String expression = ((Lexeme) lexemeComponents.get(i)).getLexeme()
+                            .concat(((Lexeme) lexemeComponents.get(i + 1)).getLexeme());
+                    Lexeme expressionLexeme = new Lexeme(expression);
+                    lexemeComponents.set(i, expressionLexeme);
+                    lexemeComponents.remove(i + 1);
+                } else {
+                    i++;
+                }
+            }
+        }
+        return textComponent.toString();
     }
 }
