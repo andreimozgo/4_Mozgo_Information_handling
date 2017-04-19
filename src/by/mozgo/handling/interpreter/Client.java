@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Andrei Mozgo. 2017.
+ * @author Andrei Mozgo
  */
 public class Client {
     private static final String SPACES = "\\p{Blank}+";

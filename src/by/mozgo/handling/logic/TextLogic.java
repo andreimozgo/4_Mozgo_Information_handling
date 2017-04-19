@@ -2,6 +2,7 @@ package by.mozgo.handling.logic;
 
 import by.mozgo.handling.composite.Lexeme;
 import by.mozgo.handling.composite.TextComponent;
+import by.mozgo.handling.composite.TextComposite;
 import by.mozgo.handling.exception.TextHandlingException;
 import by.mozgo.handling.interpreter.Client;
 import org.apache.logging.log4j.Level;
@@ -17,29 +18,34 @@ import java.util.List;
  */
 public class TextLogic {
     private static final Logger LOGGER = LogManager.getLogger();
-    private static final char SPACE = ' ';
     private static final String MATH_PATTERN = "([\\d(i\\-][\\d()ij+\\-*/\\p{Blank}]+[\\-\\d)ij+])|\\+";
 
-    public static void swapFirstLastLexeme(TextComponent text) {
-        List<TextComponent> sentences = getAllSentences(text);
+    public static String swapFirstLastLexeme(TextComponent textComponent) {
+        List<TextComponent> sentences = getAllSentences(textComponent);
         sentences.forEach((TextComponent sentence) -> {
             List<TextComponent> lexemes = sentence.getComponents();
             TextComponent temp = lexemes.get(0);
             lexemes.set(0, lexemes.get(lexemes.size() - 1));
             lexemes.set(lexemes.size() - 1, temp);
         });
-        LOGGER.log(Level.INFO, "{}", text);
+        LOGGER.log(Level.INFO, "{}", textComponent);
+        return textComponent.toString();
     }
 
-    public static void sortByLexemeNumber(TextComponent textComponent) {
+    public static String sortByLexemeNumber(TextComponent textComponent) {
         List<TextComponent> sentences = getAllSentences(textComponent);
         sentences.sort(new ComponentsSizeComparator());
         for (TextComponent sentence : sentences) {
             LOGGER.log(Level.INFO, "{} lexemes: {}", sentence.getComponents().size(), sentence);
         }
+        TextComponent resultTextComponent = new TextComposite();
+        for (TextComponent component : sentences) {
+            resultTextComponent.add(component);
+        }
+        return resultTextComponent.toString();
     }
 
-    public static void removeSpecificLexemes(TextComponent textComponent, char firstCharacter, int length) {
+    public static String removeSpecificLexemes(TextComponent textComponent, char firstCharacter, int length) {
         List<TextComponent> sentenceComponents = getAllSentences(textComponent);
         for (TextComponent sentenceComponent : sentenceComponents) {
             List<TextComponent> lexemeComponents = sentenceComponent.getComponents();
@@ -53,20 +59,13 @@ public class TextLogic {
                 }
             }
         }
+        return textComponent.toString();
     }
 
-    protected static List<TextComponent> getAllSentences(TextComponent textComponent) {
-        List<TextComponent> sentenceComponents = new ArrayList<>();
-        for (TextComponent paragraphComponent : textComponent.getComponents()) {
-            sentenceComponents.addAll(paragraphComponent.getComponents());
-        }
-        return sentenceComponents;
-    }
-
-    public static void calculateExpressions(TextComponent textComponent) {
-        PostfixNotationConverter converter = new PostfixNotationConverter();
+    public static String calculateExpressions(TextComponent textComponent) {
+        MathExpressionFormatter formatter = new MathExpressionFormatter();
         Lexeme lexemeComponent;
-        String preparedExpr = null;
+        String formattedExpression = null;
         uniteExpressions(textComponent);
         List<TextComponent> sentenceComponents = getAllSentences(textComponent);
         for (TextComponent sentenceComponent : sentenceComponents) {
@@ -75,31 +74,35 @@ public class TextLogic {
                 lexemeComponent = (Lexeme) lexemeComponents.get(i);
                 if (lexemeComponent.getLexeme().matches(MATH_PATTERN)) {
                     try {
-                        preparedExpr = converter.convertExpression(lexemeComponent);
+                        formattedExpression = formatter.format(lexemeComponent);
                     } catch (TextHandlingException e) {
-                        LOGGER.log(Level.WARN, e.getMessage());
+                        LOGGER.log(Level.WARN, "{}", e.getMessage());
                     }
-                    if (preparedExpr == null) {
-                        LOGGER.log(Level.WARN, "Can't calculate an expression, leave old text");
+                    if (formattedExpression == null) {
+                        LOGGER.log(Level.WARN, "Can't convert expression");
                     } else {
-                        Lexeme newLexemeConponent = new Lexeme(new Client(preparedExpr).calculate() + SPACE);
-                        lexemeComponents.set(i, newLexemeConponent);
+                        Lexeme newLexemeComponent = new Lexeme(new Client(formattedExpression).calculate());
+                        lexemeComponents.set(i, newLexemeComponent);
                     }
                 }
             }
         }
+        return textComponent.toString();
     }
 
     private static void uniteExpressions(TextComponent textComponent) {
         List<TextComponent> sentenceComponents = getAllSentences(textComponent);
+        Lexeme lexemeComponent;
+        Lexeme nextLexemeComponent;
         for (TextComponent sentenceComponent : sentenceComponents) {
             List<TextComponent> lexemeComponents = sentenceComponent.getComponents();
             int i = 0;
             while (i < lexemeComponents.size() - 1) {
-                if (((Lexeme) lexemeComponents.get(i)).getLexeme().matches(MATH_PATTERN) &&
-                        ((Lexeme) lexemeComponents.get(i + 1)).getLexeme().matches(MATH_PATTERN)) {
-                    String expression = ((Lexeme) lexemeComponents.get(i)).getLexeme()
-                            .concat(((Lexeme) lexemeComponents.get(i + 1)).getLexeme());
+                lexemeComponent = (Lexeme) lexemeComponents.get(i);
+                nextLexemeComponent = (Lexeme) lexemeComponents.get(i + 1);
+                if (lexemeComponent.getLexeme().matches(MATH_PATTERN) &&
+                        (nextLexemeComponent).getLexeme().matches(MATH_PATTERN)) {
+                    String expression = lexemeComponent.getLexeme().concat(nextLexemeComponent.getLexeme());
                     Lexeme expressionLexeme = new Lexeme(expression);
                     lexemeComponents.set(i, expressionLexeme);
                     lexemeComponents.remove(i + 1);
@@ -108,5 +111,13 @@ public class TextLogic {
                 }
             }
         }
+    }
+
+    private static List<TextComponent> getAllSentences(TextComponent textComponent) {
+        List<TextComponent> sentenceComponents = new ArrayList<>();
+        for (TextComponent paragraphComponent : textComponent.getComponents()) {
+            sentenceComponents.addAll(paragraphComponent.getComponents());
+        }
+        return sentenceComponents;
     }
 }

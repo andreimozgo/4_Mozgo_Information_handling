@@ -7,6 +7,7 @@ import java.util.List;
  * Created by Andrei Mozgo. 2017.
  */
 public class TextComposite implements TextComponent {
+    private static final char SPACE = ' ';
     private List<TextComponent> components = new ArrayList<>();
 
     @Override
@@ -29,7 +30,8 @@ public class TextComposite implements TextComponent {
         StringBuilder stringBuilder = new StringBuilder();
         for (TextComponent component : components) {
             stringBuilder.append(component.toString());
+            stringBuilder.append(SPACE);
         }
-        return stringBuilder.toString();
+        return stringBuilder.toString().trim();
     }
 }

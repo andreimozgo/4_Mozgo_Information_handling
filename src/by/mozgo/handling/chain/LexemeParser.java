@@ -10,12 +10,12 @@ import java.util.List;
 /**
  * Created by Andrei Mozgo. 2017.
  */
-public class LexemeParser implements TextParser {
-    private final String LEXEME_DELIMETER = "\\p{Blank}";
+class LexemeParser implements TextParser {
+    private static final String LEXEME_DELIMITER = "\\p{Blank}";
 
     @Override
     public TextComponent parseText(String text) {
-        List<String> lexemes = Arrays.asList(text.split(LEXEME_DELIMETER));
+        List<String> lexemes = Arrays.asList(text.split(LEXEME_DELIMITER));
         TextComponent sentenceComponent = new TextComposite();
 
         for (String lexeme : lexemes) {

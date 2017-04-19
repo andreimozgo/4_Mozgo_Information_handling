@@ -14,12 +14,12 @@ import java.util.List;
  */
 public class ParagraphParser implements TextParser {
     private static final Logger LOGGER = LogManager.getLogger();
-    private final String PARAGRAPH_DELIMETER = "\\n";
+    private static final String PARAGRAPH_DELIMITER = "\\n";
     private TextParser nextParser = new SentenceParser();
 
     @Override
     public TextComponent parseText(String text) {
-        List<String> paragraphs = Arrays.asList(text.split(PARAGRAPH_DELIMETER));
+        List<String> paragraphs = Arrays.asList(text.split(PARAGRAPH_DELIMITER));
         TextComponent textComponent = new TextComposite();
 
         for (String paragraph : paragraphs) {

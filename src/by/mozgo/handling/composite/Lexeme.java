@@ -16,6 +16,6 @@ public class Lexeme implements TextComponent {
 
     @Override
     public String toString() {
-        return " " + lexeme;
+        return lexeme;
     }
 }

@@ -889,3 +889,61 @@ java.io.FileNotFoundException:
 2017-04-19 21:37:42 [INFO ] (ParagraphParser.java:30) - Text has been parsed successfully
 2017-04-19 22:19:52 [INFO ] (TextReader.java:39) - File has been read successfully. 
 2017-04-19 22:19:52 [INFO ] (ParagraphParser.java:29) - Text has been parsed successfully
+2017-04-19 23:45:11 [INFO ] (TextReader.java:39) - File has been read successfully. 
+2017-04-19 23:45:11 [INFO ] (ParagraphParser.java:29) - Text has been parsed successfully
+2017-04-20 00:39:16 [INFO ] (ParagraphParser.java:29) - Text has been parsed successfully
+2017-04-20 00:39:16 [INFO ] (TextLogic.java:38) - 5 lexemes:  It has survived not only.
+2017-04-20 00:39:16 [INFO ] (TextLogic.java:38) - 6 lexemes:  Five centuries, but also the leap.
+2017-04-20 00:39:16 [INFO ] (TextLogic.java:38) - 7 lexemes:  Into 13+ i-- electronic typesetting, remaining 3+5.
+2017-04-20 00:42:52 [INFO ] (ParagraphParser.java:29) - Text has been parsed successfully
+2017-04-20 00:42:52 [INFO ] (TextLogic.java:38) - 5 lexemes:  It has survived not only.
+2017-04-20 00:42:52 [INFO ] (TextLogic.java:38) - 6 lexemes:  Five centuries, but also the leap.
+2017-04-20 00:42:52 [INFO ] (TextLogic.java:38) - 7 lexemes:  Into 13+ i-- electronic typesetting, remaining 3+5.
+2017-04-20 00:46:51 [INFO ] (ParagraphParser.java:29) - Text has been parsed successfully
+2017-04-20 00:46:51 [INFO ] (TextLogic.java:38) - 5 lexemes:  It has survived not only.
+2017-04-20 00:46:51 [INFO ] (TextLogic.java:38) - 6 lexemes:  Five centuries, but also the leap.
+2017-04-20 00:46:51 [INFO ] (TextLogic.java:38) - 7 lexemes:  Into 13+ i-- electronic typesetting, remaining 3+5.
+2017-04-20 00:50:56 [INFO ] (ParagraphParser.java:29) - Text has been parsed successfully
+2017-04-20 00:50:56 [INFO ] (TextLogic.java:38) - 5 lexemes:  It has survived not only.
+2017-04-20 00:50:56 [INFO ] (TextLogic.java:38) - 6 lexemes:  Five centuries, but also the leap.
+2017-04-20 00:50:56 [INFO ] (TextLogic.java:38) - 7 lexemes:  Into 13+ i-- electronic typesetting, remaining 3+5.
+2017-04-20 00:57:30 [INFO ] (ParagraphParser.java:29) - Text has been parsed successfully
+2017-04-20 00:57:30 [INFO ] (TextLogic.java:38) - 5 lexemes: It has survived not only.
+2017-04-20 00:57:30 [INFO ] (TextLogic.java:38) - 6 lexemes: Five centuries, but also the leap.
+2017-04-20 00:57:30 [INFO ] (TextLogic.java:38) - 7 lexemes: Into 13+ i-- electronic typesetting, remaining 3+5.
+2017-04-20 00:58:13 [INFO ] (TextReader.java:39) - File has been read successfully. 
+2017-04-20 00:58:13 [INFO ] (ParagraphParser.java:29) - Text has been parsed successfully
+2017-04-20 01:05:17 [INFO ] (ParagraphParser.java:29) - Text has been parsed successfully
+2017-04-20 01:05:17 [INFO ] (TextLogic.java:39) - 5 lexemes: It has survived not only.
+2017-04-20 01:05:17 [INFO ] (TextLogic.java:39) - 6 lexemes: Five centuries, but also the leap.
+2017-04-20 01:05:17 [INFO ] (TextLogic.java:39) - 7 lexemes: Into 13+ i-- electronic typesetting, remaining 3+5.
+2017-04-20 01:08:20 [INFO ] (ParagraphParser.java:29) - Text has been parsed successfully
+2017-04-20 01:08:21 [INFO ] (TextLogic.java:32) - leap. centuries, but also the Five only. has survived not It 3+5. 13+ i-- electronic typesetting, remaining Into
+2017-04-20 01:11:00 [INFO ] (ParagraphParser.java:29) - Text has been parsed successfully
+2017-04-20 01:11:00 [INFO ] (TextLogic.java:32) - leap. centuries, but also the Five only. has survived not It 3+5. 13+ i-- electronic typesetting, remaining Into
+2017-04-20 01:11:57 [INFO ] (ParagraphParser.java:29) - Text has been parsed successfully
+2017-04-20 01:11:58 [INFO ] (TextLogic.java:32) - leap. centuries, but also the Five only. has survived not It 3+5. 13+ i-- electronic typesetting, remaining Into
+2017-04-20 01:15:10 [INFO ] (ParagraphParser.java:29) - Text has been parsed successfully
+2017-04-20 01:15:10 [INFO ] (TextLogic.java:59) - Lexeme 'but' has been removed
+2017-04-20 01:20:52 [INFO ] (ParagraphParser.java:29) - Text has been parsed successfully
+2017-04-20 01:23:31 [INFO ] (ParagraphParser.java:29) - Text has been parsed successfully
+2017-04-20 01:24:41 [INFO ] (ParagraphParser.java:29) - Text has been parsed successfully
+2017-04-20 01:26:53 [INFO ] (ParagraphParser.java:29) - Text has been parsed successfully
+2017-04-20 01:26:53 [INFO ] (TextLogic.java:40) - 5 lexemes: It has survived not only.
+2017-04-20 01:26:53 [INFO ] (TextLogic.java:40) - 6 lexemes: Five centuries, but also the leap.
+2017-04-20 01:26:53 [INFO ] (TextLogic.java:40) - 8 lexemes: Into 13+ i-- electronic typesetting, remaining 3+5 leap.
+2017-04-20 01:26:53 [INFO ] (ParagraphParser.java:29) - Text has been parsed successfully
+2017-04-20 01:26:53 [INFO ] (TextLogic.java:59) - Lexeme 'but' has been removed
+2017-04-20 01:26:53 [INFO ] (ParagraphParser.java:29) - Text has been parsed successfully
+2017-04-20 01:26:53 [INFO ] (TextLogic.java:32) - leap. centuries, but also the Five only. has survived not It leap. 13+ i-- electronic typesetting, remaining 3+5 Into
+2017-04-20 01:26:53 [INFO ] (ParagraphParser.java:29) - Text has been parsed successfully
+2017-04-20 01:31:38 [INFO ] (ParagraphParser.java:29) - Text has been parsed successfully
+2017-04-20 01:31:54 [INFO ] (ParagraphParser.java:29) - Text has been parsed successfully
+2017-04-20 01:32:55 [INFO ] (ParagraphParser.java:29) - Text has been parsed successfully
+2017-04-20 01:33:30 [INFO ] (ParagraphParser.java:29) - Text has been parsed successfully
+2017-04-20 01:40:28 [INFO ] (ParagraphParser.java:29) - Text has been parsed successfully
+2017-04-20 01:41:10 [INFO ] (ParagraphParser.java:29) - Text has been parsed successfully
+2017-04-20 01:41:54 [INFO ] (TextReader.java:39) - File has been read successfully. 
+2017-04-20 01:41:54 [INFO ] (ParagraphParser.java:29) - Text has been parsed successfully
+2017-04-20 01:46:17 [INFO ] (ParagraphParser.java:29) - Text has been parsed successfully
+2017-04-20 01:46:43 [INFO ] (ParagraphParser.java:29) - Text has been parsed successfully

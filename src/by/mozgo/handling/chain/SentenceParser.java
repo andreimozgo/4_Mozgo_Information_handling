@@ -9,8 +9,8 @@ import java.util.regex.Pattern;
 /**
  * Created by Andrei Mozgo. 2017.
  */
-public class SentenceParser implements TextParser {
-    private final String SENTENCE_PATTERN = "\\p{Upper}[^.]+\\.";
+class SentenceParser implements TextParser {
+    private static final String SENTENCE_PATTERN = "\\p{Upper}[^.]+\\.";
     private TextParser nextParser = new LexemeParser();
 
     @Override
