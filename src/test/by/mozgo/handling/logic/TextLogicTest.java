@@ -8,7 +8,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * Created by Андрей on 17.04.2017.
+ * Created by Andrei Mozgo. 2017.
  */
 public class TextLogicTest {
     TextComponent textComponent;

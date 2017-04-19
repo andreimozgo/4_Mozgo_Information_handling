@@ -887,3 +887,5 @@ java.io.FileNotFoundException:
 2017-04-19 21:36:43 [INFO ] (ParagraphParser.java:30) - Text has been parsed successfully
 2017-04-19 21:37:42 [INFO ] (TextReader.java:39) - File has been read successfully. 
 2017-04-19 21:37:42 [INFO ] (ParagraphParser.java:30) - Text has been parsed successfully
+2017-04-19 22:19:52 [INFO ] (TextReader.java:39) - File has been read successfully. 
+2017-04-19 22:19:52 [INFO ] (ParagraphParser.java:29) - Text has been parsed successfully

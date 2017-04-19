@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Андрей on 19.04.2017.
+ * Created by Andrei Mozgo. 2017.
  */
 public class TextComposite implements TextComponent {
     private List<TextComponent> components = new ArrayList<>();

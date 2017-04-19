@@ -10,7 +10,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 /**
- * @author Andrei Mozgo
+ * Created by Andrei Mozgo. 2017.
  */
 public class TextReader {
     private static final Logger LOGGER = LogManager.getLogger();

@@ -3,6 +3,9 @@ package by.mozgo.handling.interpreter;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
+/**
+ * Created by Andrei Mozgo. 2017.
+ */
 class Context {
     private Deque<String> contextValues;
     private double i = 10;

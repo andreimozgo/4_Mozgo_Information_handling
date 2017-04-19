@@ -1,7 +1,7 @@
 package by.mozgo.handling.composite;
 
 /**
- * @author Andrei Mozgo
+ * Created by Andrei Mozgo. 2017.
  */
 public class Lexeme implements TextComponent {
     private String lexeme;

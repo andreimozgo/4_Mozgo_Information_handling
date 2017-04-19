@@ -7,6 +7,9 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Created by Andrei Mozgo. 2017.
+ */
 class MathExpressionFormatter {
     private static final String ICREMENT_PREFIX_I = "(\\+\\+i)";
     private static final String INREMENT_POSTFIX_I = "(i\\+\\+)";

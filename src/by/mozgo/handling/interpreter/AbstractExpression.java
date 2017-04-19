@@ -1,6 +1,10 @@
 package by.mozgo.handling.interpreter;
 
+/**
+ * Created by Andrei Mozgo. 2017.
+ */
 abstract class AbstractExpression {
+
     abstract void interpret(Context context);
 
     double defineOperand(Context context) {

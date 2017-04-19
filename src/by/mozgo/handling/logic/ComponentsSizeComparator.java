@@ -5,7 +5,7 @@ import by.mozgo.handling.composite.TextComponent;
 import java.util.Comparator;
 
 /**
- * Created by Андрей on 17.04.2017.
+ * Created by Andrei Mozgo. 2017.
  */
 public class ComponentsSizeComparator implements Comparator<TextComponent> {
 

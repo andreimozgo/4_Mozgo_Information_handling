@@ -3,54 +3,57 @@ package by.mozgo.handling.interpreter;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Created by Andrei Mozgo. 2017.
+ */
 public class Client {
-    private static final String SPACES = "\\s+";
-    private List<AbstractExpression> expressionList;
+    private static final String SPACES = "\\p{Blank}+";
+    private List<AbstractExpression> expressions;
 
     public Client(String expression) {
-        expressionList = new ArrayList<>();
+        expressions = new ArrayList<>();
         parse(expression);
-    }
-
-    private void parse(String expression) {
-        for (String token : expression.split(SPACES)) {
-            if (token.isEmpty()) {
-                continue;
-            }
-            switch (token) {
-                case "+":
-                    expressionList.add(new AddExpression());
-                    break;
-                case "-":
-                    expressionList.add(new SubstractExpression());
-                    break;
-                case "*":
-                    expressionList.add(new MultiplyExpression());
-                    break;
-                case "/":
-                    expressionList.add(new DivideExpression());
-                    break;
-                case "#":
-                    expressionList.add(new BeforeDecrement());
-                    break;
-                case "£":
-                    expressionList.add(new BeforeIncrement());
-                    break;
-                case "{":
-                    expressionList.add(new AfterIncrement());
-                    break;
-                case "}":
-                    expressionList.add(new AfterDecrement());
-                    break;
-                default:
-                    expressionList.add(new NonTerminalExpression(token));
-            }
-        }
     }
 
     public String calculate() {
         Context context = new Context();
-        expressionList.forEach((term) -> term.interpret(context));
+        expressions.forEach((term) -> term.interpret(context));
         return context.popValue();
+    }
+
+    private void parse(String expression) {
+        for (String symbol : expression.split(SPACES)) {
+            if (symbol.isEmpty()) {
+                continue;
+            }
+            switch (symbol) {
+                case "+":
+                    expressions.add(new TerminalExpressionPlus());
+                    break;
+                case "-":
+                    expressions.add(new TerminalExpressionMinus());
+                    break;
+                case "*":
+                    expressions.add(new TerminalExpressionMultiply());
+                    break;
+                case "/":
+                    expressions.add(new TerminalExpressionDivide());
+                    break;
+                case "#":
+                    expressions.add(new TerminalBeforeDecrement());
+                    break;
+                case "£":
+                    expressions.add(new TerminalBeforeIncrement());
+                    break;
+                case "{":
+                    expressions.add(new TerminalAfterIncrement());
+                    break;
+                case "}":
+                    expressions.add(new TerminalAfterDecrement());
+                    break;
+                default:
+                    expressions.add(new NonTerminalExpression(symbol));
+            }
+        }
     }
 }

@@ -10,7 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * @author Andrei Mozgo
+ * Created by Andrei Mozgo. 2017.
  */
 public class ParagraphParser implements TextParser {
     private static final Logger LOGGER = LogManager.getLogger();
@@ -23,8 +23,7 @@ public class ParagraphParser implements TextParser {
         TextComponent textComponent = new TextComposite();
 
         for (String paragraph : paragraphs) {
-            TextComponent paragraphComponent;
-            paragraphComponent = nextParser.parseText(paragraph);
+            TextComponent paragraphComponent = nextParser.parseText(paragraph);
             textComponent.add(paragraphComponent);
         }
         LOGGER.log(Level.INFO, "Text has been parsed successfully");

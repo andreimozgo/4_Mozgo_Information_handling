@@ -5,7 +5,9 @@ import by.mozgo.handling.exception.TextHandlingException;
 
 import java.util.ArrayDeque;
 
-
+/**
+ * Created by Andrei Mozgo. 2017.
+ */
 public class PostfixNotationConverter {
     private static final String OPERATIONS = "[\\+-=\\*/{}£#]";
     private static final String WHITESPACES = "\\s+";

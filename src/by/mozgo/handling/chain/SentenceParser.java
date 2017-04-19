@@ -7,7 +7,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * @author Andrei Mozgo
+ * Created by Andrei Mozgo. 2017.
  */
 public class SentenceParser implements TextParser {
     private final String SENTENCE_PATTERN = "\\p{Upper}[^.]+\\.";

@@ -1,10 +1,14 @@
 package by.mozgo.handling.interpreter;
 
-class AddExpression extends AbstractExpression {
+/**
+ * Created by Andrei Mozgo. 2017.
+ */
+class TerminalExpressionMultiply extends AbstractExpression {
+
     @Override
     void interpret(Context context) {
         double rightOperand = defineOperand(context);
         double leftOperand = defineOperand(context);
-        context.pushValue(String.valueOf(leftOperand + rightOperand));
+        context.pushValue(String.valueOf(leftOperand * rightOperand));
     }
 }

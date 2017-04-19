@@ -5,7 +5,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * @author Andrei Mozgo
+ * Created by Andrei Mozgo. 2017.
  */
 public class TextReaderTest {
     @Test

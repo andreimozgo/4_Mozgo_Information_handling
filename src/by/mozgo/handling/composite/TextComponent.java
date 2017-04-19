@@ -3,7 +3,7 @@ package by.mozgo.handling.composite;
 import java.util.List;
 
 /**
- * @author Andrei Mozgo
+ * Created by Andrei Mozgo. 2017.
  */
 public interface TextComponent {
     default void add(TextComponent component) {

@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * @author Andrei Mozgo
+ * Created by Andrei Mozgo. 2017.
  */
 public class LexemeParser implements TextParser {
     private final String LEXEME_DELIMETER = "\\p{Blank}";

@@ -8,7 +8,7 @@ import by.mozgo.handling.writer.TextWriter;
 import org.junit.Test;
 
 /**
- * @author Andrei Mozgo
+ * Created by Andrei Mozgo. 2017.
  */
 public class TextParserTest {
     @Test

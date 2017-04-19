@@ -13,7 +13,7 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * Created by Андрей on 17.04.2017.
+ * Created by Andrei Mozgo. 2017.
  */
 public class TextLogic {
     private static final Logger LOGGER = LogManager.getLogger();
