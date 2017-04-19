@@ -36,7 +36,7 @@ public class TextReader {
             LOGGER.log(Level.FATAL, "Input file empty! ");
             throw new RuntimeException("Input file empty!");
         }
-
+        LOGGER.log(Level.INFO, "File has been read successfully. ");
         return text.toString();
     }
 }

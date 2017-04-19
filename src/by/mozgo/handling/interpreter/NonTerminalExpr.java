@@ -1,14 +1,17 @@
 package by.mozgo.handling.interpreter;
 
-public class NonTerminalExpr implements IExpr {
+/**
+ * @author Andrei Mozgo
+ */
+class NonTerminalExpr extends AbstractExpr {
     private String value;
 
-    public NonTerminalExpr(String value) {
+    NonTerminalExpr(String value) {
         this.value = value;
     }
 
     @Override
-    public void interpret(Context context) {
+    void interpret(Context context) {
         context.pushValue(value);
     }
 }

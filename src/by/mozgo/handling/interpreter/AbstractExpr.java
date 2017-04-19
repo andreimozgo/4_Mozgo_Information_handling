@@ -1,9 +1,12 @@
 package by.mozgo.handling.interpreter;
 
-public interface IExpr {
-    void interpret(Context context);
+/**
+ * @author Andrei Mozgo
+ */
+abstract class AbstractExpr {
+    abstract void interpret(Context context);
 
-    default double defineOperand(Context context) {
+    double defineOperand(Context context) {
         double res;
         String value = context.popValue();
         switch (value) {

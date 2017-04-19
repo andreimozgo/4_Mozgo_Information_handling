@@ -1,8 +1,11 @@
 package by.mozgo.handling.interpreter;
 
-public class PreIncrementExpr implements IExpr {
+/**
+ * @author Andrei Mozgo
+ */
+public class PreIncrementExpr extends AbstractExpr {
     @Override
-    public void interpret(Context context) {
+    void interpret(Context context) {
         String var = context.popValue();
         double num;
         switch (var) {

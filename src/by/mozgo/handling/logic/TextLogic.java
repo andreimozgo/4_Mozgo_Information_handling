@@ -17,6 +17,7 @@ import java.util.List;
  */
 public class TextLogic {
     private static final Logger LOGGER = LogManager.getLogger();
+    private static final char SPACE = ' ';
     private static final String MATH_PATTERN = "([\\d(i\\-][\\d()ij+\\-*/\\p{Blank}]+[\\-\\d)ij+])|\\+";
 
     public static void swapFirstLastLexeme(TextComponent text) {
@@ -32,7 +33,7 @@ public class TextLogic {
 
     public static void sortByLexemeNumber(TextComponent textComponent) {
         List<TextComponent> sentences = getAllSentences(textComponent);
-        sentences.sort(new ComponentsSizeComporator());
+        sentences.sort(new ComponentsSizeComparator());
         for (TextComponent sentence : sentences) {
             LOGGER.log(Level.INFO, "{} lexemes: {}", sentence.getComponents().size(), sentence);
         }
@@ -65,28 +66,31 @@ public class TextLogic {
     public static void calculateExpressions(TextComponent textComponent) {
         PostfixNotationConverter converter = new PostfixNotationConverter();
         Lexeme lexemeComponent;
+        String preparedExpr = null;
+        uniteExpressions(textComponent);
         List<TextComponent> sentenceComponents = getAllSentences(textComponent);
         for (TextComponent sentenceComponent : sentenceComponents) {
             List<TextComponent> lexemeComponents = sentenceComponent.getComponents();
             for (int i = 0; i < lexemeComponents.size(); i++) {
                 lexemeComponent = (Lexeme) lexemeComponents.get(i);
                 if (lexemeComponent.getLexeme().matches(MATH_PATTERN)) {
-
-                    String preparedExpr = null;
                     try {
                         preparedExpr = converter.convertExpression(lexemeComponent);
                     } catch (TextHandlingException e) {
-                        LOGGER.log(Level.INFO, "Error in expression");
+                        LOGGER.log(Level.WARN, e.getMessage());
                     }
-                    String newExpr = new InterpreterClient(preparedExpr).calculate();
-                    MathExpression result = new MathExpression(newExpr + ' ');
-                    sentence.receiveChilds().add(i, result);
+                    if (preparedExpr == null) {
+                        LOGGER.log(Level.WARN, "Can't calculate an expression, leave old text");
+                    } else {
+                        Lexeme newLexemeConponent = new Lexeme(new InterpreterClient(preparedExpr).calculate() + SPACE);
+                        lexemeComponents.set(i, newLexemeConponent);
+                    }
                 }
             }
         }
     }
 
-    protected static String uniteExpressions(TextComponent textComponent) {
+    private static void uniteExpressions(TextComponent textComponent) {
         List<TextComponent> sentenceComponents = getAllSentences(textComponent);
         for (TextComponent sentenceComponent : sentenceComponents) {
             List<TextComponent> lexemeComponents = sentenceComponent.getComponents();
@@ -104,6 +108,5 @@ public class TextLogic {
                 }
             }
         }
-        return textComponent.toString();
     }
 }

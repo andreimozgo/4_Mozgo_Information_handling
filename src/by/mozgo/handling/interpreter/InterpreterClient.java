@@ -3,8 +3,12 @@ package by.mozgo.handling.interpreter;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Andrei Mozgo
+ */
 public class InterpreterClient {
-    private List<IExpr> expressionList;
+    private static final String SPACES = "\\s+";
+    private List<AbstractExpr> expressionList;
 
     public InterpreterClient(String expression) {
         expressionList = new ArrayList<>();
@@ -12,7 +16,7 @@ public class InterpreterClient {
     }
 
     private void parse(String expression) {
-        for (String token : expression.split("\\s+")) {
+        for (String token : expression.split(SPACES)) {
             if (token.isEmpty()) {
                 continue;
             }
@@ -36,16 +40,10 @@ public class InterpreterClient {
                     expressionList.add(new PreIncrementExpr());
                     break;
                 case "{":
-                    expressionList.add(new PreIncrementExpr());
+                    expressionList.add(new PostIncrementExpr());
                     break;
                 case "}":
                     expressionList.add(new PostDecrementExpr());
-                    break;
-                case "i":
-                    expressionList.add(new NonTerminalExpr(token));
-                    break;
-                case "j":
-                    expressionList.add(new NonTerminalExpr(token));
                     break;
                 default:
                     expressionList.add(new NonTerminalExpr(token));

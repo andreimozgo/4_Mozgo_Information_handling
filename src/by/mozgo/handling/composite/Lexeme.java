@@ -3,7 +3,7 @@ package by.mozgo.handling.composite;
 /**
  * @author Andrei Mozgo
  */
-public class Lexeme extends TextComponent {
+public class Lexeme implements TextComponent {
     private String lexeme;
 
     public Lexeme(String lexeme) {

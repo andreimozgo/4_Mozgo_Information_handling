@@ -47,7 +47,6 @@ class MathExpressionFormatter {
             positives.add(m.group());
             expr = expr.replace(m.group(), "P");
         }
-
         return expr;
     }
 
@@ -69,7 +68,6 @@ class MathExpressionFormatter {
                     break;
                 default:
                     newExpr.append(whitespace).append(c).append(whitespace);
-
             }
         }
         return newExpr.toString().trim();

@@ -2,8 +2,6 @@ package by.mozgo.handling.logic;
 
 import by.mozgo.handling.composite.TextComponent;
 import by.mozgo.handling.exception.TextHandlingException;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayDeque;
 
@@ -11,19 +9,18 @@ import java.util.ArrayDeque;
  * @author Andrei Mozgo
  */
 public class PostfixNotationConverter {
-    private static Logger logger = LogManager.getLogger(PostfixNotationConverter.class);
     private final char WHITESPACE = ' ';
     private final int PLUS_MINUS_PRIORITY = 1;
     private final int MULTIPLY_DIVIDE_PRIORITY = 2;
-    private final int INCREMENT_DECREMENT_PRIOROTY = 3;
+    private final int INCREMENT_DECREMENT_PRIORITY = 3;
+    private final String DELIMITER = "\\s+";
     private ArrayDeque<String> operations = new ArrayDeque<>();
     private MathExpressionFormatter formatter = new MathExpressionFormatter();
 
     public String convertExpression(TextComponent mathExpression) throws TextHandlingException {
         String expression = formatter.formatExpression(mathExpression);
         StringBuilder postfixExpression = new StringBuilder();
-        String delimiter = "\\s+";
-        for (String token : expression.split(delimiter)) {
+        for (String token : expression.split(DELIMITER)) {
             switch (token) {
                 case "+":
                 case "-":
@@ -37,7 +34,7 @@ public class PostfixNotationConverter {
                 case "#":
                 case "{":
                 case "}":
-                    putByPriority(token, INCREMENT_DECREMENT_PRIOROTY, postfixExpression);
+                    putByPriority(token, INCREMENT_DECREMENT_PRIORITY, postfixExpression);
                     break;
                 case "(":
                     operations.push(token);
@@ -78,7 +75,7 @@ public class PostfixNotationConverter {
                     case "#":
                     case "{":
                     case "}":
-                        topPriority = INCREMENT_DECREMENT_PRIOROTY;
+                        topPriority = INCREMENT_DECREMENT_PRIORITY;
                         break;
                     default:
                         throw new TextHandlingException("Unsupported operation");
@@ -104,5 +101,4 @@ public class PostfixNotationConverter {
             }
         }
     }
-
 }

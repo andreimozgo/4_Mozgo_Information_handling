@@ -1,8 +1,11 @@
 package by.mozgo.handling.interpreter;
 
-public class PostDecrementExpr implements IExpr {
+/**
+ * @author Andrei Mozgo
+ */
+public class PostDecrementExpr extends AbstractExpr {
     @Override
-    public void interpret(Context context) {
+    void interpret(Context context) {
         String var = context.popValue();
         switch (var) {
             case "i":

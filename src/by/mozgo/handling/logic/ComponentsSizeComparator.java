@@ -7,7 +7,7 @@ import java.util.Comparator;
 /**
  * Created by Андрей on 17.04.2017.
  */
-public class ComponentsSizeComporator implements Comparator<TextComponent> {
+public class ComponentsSizeComparator implements Comparator<TextComponent> {
 
     @Override
     public int compare(TextComponent component1, TextComponent component2) {

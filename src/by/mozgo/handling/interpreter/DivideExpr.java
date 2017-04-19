@@ -1,8 +1,11 @@
 package by.mozgo.handling.interpreter;
 
-public class DivideExpr implements IExpr {
+/**
+ * @author Andrei Mozgo
+ */
+public class DivideExpr extends AbstractExpr {
     @Override
-    public void interpret(Context context) {
+    void interpret(Context context) {
         double rightOperand = defineOperand(context);
         double leftOperand = defineOperand(context);
         context.pushValue(String.valueOf(leftOperand / rightOperand));
