@@ -62,8 +62,16 @@ public class TextLogic {
         return textComponent.toString();
     }
 
+    public static String receiveText(TextComponent textComponent) {
+        StringBuilder text = new StringBuilder();
+        for (TextComponent child : textComponent.getComponents()) {
+            text.append("\\t").append(child);
+        }
+        return text.toString();
+    }
+
     public static String calculateExpressions(TextComponent textComponent, int i, int j) {
-        MathExpressionFormatter formatter = new MathExpressionFormatter();
+        MathFormatter formatter = new MathFormatter();
         Lexeme lexemeComponent;
         String formattedExpression = null;
         uniteExpressions(textComponent);

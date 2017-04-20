@@ -58,6 +58,13 @@ public class TextLogicTest {
         int j = 20;
         String actual = TextLogic.calculateExpressions(textComponent, i, j);
         Assert.assertEquals(expected, actual);
+    }
 
+    @Test
+    public void testReceiveText() {
+        String expected = "\\tFive centuries, but also the leap. It has survived not only. " +
+                "Into 13+ i-- electronic typesetting, remaining 3+5 leap.";
+        String actual = TextLogic.receiveText(textComponent);
+        Assert.assertEquals(expected, actual);
     }
 }

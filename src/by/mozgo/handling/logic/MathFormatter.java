@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
 /**
  * Created by Andrei Mozgo. 2017.
  */
-class MathExpressionFormatter {
+class MathFormatter {
     private static final String OPERATIONS = "[+-=*/{}£#]";
     private static final String SPACES = "\\p{Blank}+";
     private static final char SPACE = ' ';

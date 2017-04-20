@@ -30,13 +30,13 @@ public class TextReader {
             }
         } catch (IOException e) {
             LOGGER.log(Level.FATAL, "Input file not found! {}", e);
-            throw new RuntimeException(e + "Input file not found!", e);
+            throw new RuntimeException("Input file not found!" + e, e);
         }
         if (text.toString().isEmpty()) {
-            LOGGER.log(Level.FATAL, "Input file empty! ");
+            LOGGER.log(Level.FATAL, "Input file empty!");
             throw new RuntimeException("Input file empty!");
         }
-        LOGGER.log(Level.INFO, "File has been read successfully. ");
+        LOGGER.log(Level.INFO, "File has been read successfully.");
         return text.toString();
     }
 }
